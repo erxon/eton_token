@@ -1,0 +1,37 @@
+{
+  "canisters": {
+    "eton_token_backend": {
+      "main": "src/eton_token_backend/main.mo",
+      "type": "motoko"
+    },
+    "eton_token_frontend": {
+      "dependencies": [
+        "eton_token_backend"
+      ],
+      "source": [
+        "src/eton_token_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "eton_token_frontend"
+    },
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
